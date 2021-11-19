@@ -1,3 +1,18 @@
-body {
-    background-color: aqua;
-}
+@use "abstracts/variables";
+@use "abstracts/utilities";
+
+@use "base/reset";
+@use "base/typography";
+
+@use "layout/body";
+@use "layout/container";
+@use "layout/header";
+
+@use "layout/footer";
+
+@use "pages/home";
+@use "pages/board";
+//@use "pages/contact";
+//@use "pages/page404";
+
+@use "components/buttons";

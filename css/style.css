@@ -1,5 +1,564 @@
+/*image hover effect*/
+.img-zoom {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.img-zoom img {
+  max-width: 100%;
+  transition: 0.8s all ease-in-out;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/*
+///////////////////////////////RESET\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
 body {
-  background-color: aqua;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+//////////////////////GENERAL TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+There will be other typography styles specific to items elsewhere 
+in the css
+*/
+p {
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  color: black;
+  font-weight: normal;
+}
+
+p:first-of-type {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+//////////////////////////////BODY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/*
+///////////////////////////CONTAINERS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/*main container*/
+.container {
+  padding: 3rem 1rem 0 1rem;
+  margin: 0 auto;
+  max-width: 75rem;
+}
+@media (max-width: 800px) {
+  .container {
+    padding-top: 1rem;
+  }
+}
+
+/*page container - for sidebar and content*/
+.page-container {
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+.content {
+  max-width: 945px;
+  padding-left: 1em;
+}
+
+@media (max-width: 800px) {
+  .sidebar-container {
+    display: none;
+  }
+}
+
+.sidebar {
+  min-width: 200px;
+}
+
+/*GUTENBERG ADJUSTMENTS & ADAPTATIONS*/
+.wp-block-columns {
+  margin-bottom: 0;
+}
+
+/*
+///////////////////////////HEADER & NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/*hero for home page*/
+.hero {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  background-image: url(../img/hero-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 127px;
+  max-width: 950px;
+}
+.hero h2 {
+  color: white;
+  font-size: 2.25rem;
+  align-self: center;
+  padding-left: 2rem;
+}
+.hero button {
+  align-self: flex-end;
+}
+@media (max-width: 800px) {
+  .hero {
+    display: none;
+  }
+}
+
+.nav-header {
+  display: flex;
+  gap: 5rem;
+}
+@media (max-width: 800px) {
+  .nav-header {
+    gap: 2rem;
+  }
+}
+
+.menu-container {
+  display: none;
+}
+@media (max-width: 800px) {
+  .menu-container {
+    display: block;
+  }
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #00b3b0;
+  transition: all 0.3s linear;
+}
+
+.nav-toggle:hover {
+  background-color: rgba(0, 179, 176, 0.5);
+  cursor: pointer;
+}
+
+.mobile-menu-container {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+/*shared styles for menu ul*/
+#nav_menu-2 {
+  list-style-type: none;
+}
+
+.mobile-menu,
+.menu {
+  background-color: #f3f5f7;
+  font-size: 0.875rem;
+  padding: 0 5px;
+}
+.mobile-menu a,
+.menu a {
+  padding: 0.5rem 0;
+  transform: all 0.3s linear;
+  color: #333333;
+  display: inline-block;
+  width: 90%;
+  transition: all 0.3s linear;
+}
+.mobile-menu a:hover,
+.menu a:hover {
+  color: white;
+}
+.mobile-menu li,
+.menu li {
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  transition: all 0.3s linear;
+}
+.mobile-menu li:last-of-type,
+.menu li:last-of-type {
+  border-bottom: none;
+}
+.mobile-menu .fa-chevron-right,
+.menu .fa-chevron-right {
+  color: #333333;
+  padding-right: 5px;
+}
+.mobile-menu li:hover,
+.menu li:hover {
+  background-color: #00b3b0;
+  border-bottom: 1px solid white;
+}
+.mobile-menu li.last-of-type:hover,
+.menu li.last-of-type:hover {
+  border-bottom: none;
+}
+.mobile-menu li:hover:before,
+.menu li:hover:before {
+  color: white;
+}
+
+.mobile-menu {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .page-title {
+    display: none;
+  }
+}
+
+.page-title-mobile h1 {
+  display: none;
+}
+@media (max-width: 800px) {
+  .page-title-mobile h1 {
+    display: block;
+    font-size: 1.25rem;
+  }
+}
+
+.sidebar {
+  background-color: #f3f5f7;
+}
+.sidebar h2 {
+  font-size: 1.125rem;
+  padding: 10px 0 0 10px;
+}
+
+/*logo hover effect*/
+.logo {
+  position: relative;
+  z-index: 1;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.page-homepage .logo {
+  cursor: default;
+}
+
+.go-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 127px;
+  height: 127px;
+  z-index: 2;
+  transition: all 0.3s linear;
+}
+
+.go-home-hover {
+  height: 50px;
+  width: 50px;
+  top: -3px;
+  left: -3px;
+  -webkit-box-shadow: -2px -2px 0px 1px rgba(0, 179, 176, 0.97);
+  box-shadow: -2px -2px 0px 1px rgba(0, 179, 176, 0.97);
+  cursor: pointer;
+}
+
+/*
+///////////////////////////FOOTER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/*///////////////////Buttons\\\\\\\\\\\\\\\\\\\\\*/
+.fa-arrow-right {
+  transition: all 0.3s linear;
+}
+
+button, .blocks-row-1 .wp-block-column:nth-of-type(1) a,
+.blocks-row-1 .wp-block-column:nth-of-type(2) a, .hero button {
+  border: none;
+  padding: 0.5rem 1.15rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+button:hover, .blocks-row-1 .wp-block-column:nth-of-type(1) a:hover,
+.blocks-row-1 .wp-block-column:nth-of-type(2) a:hover {
+  opacity: 0.8;
+  padding-right: 2rem;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+button:hover .fa-arrow-right, .blocks-row-1 .wp-block-column:nth-of-type(1) a:hover .fa-arrow-right,
+.blocks-row-1 .wp-block-column:nth-of-type(2) a:hover .fa-arrow-right {
+  transform: translateX(20px);
+}
+
+.hero button, .hero .blocks-row-1 .wp-block-column:nth-of-type(1) a, .blocks-row-1 .wp-block-column:nth-of-type(1) .hero a,
+.hero .blocks-row-1 .wp-block-column:nth-of-type(2) a,
+.blocks-row-1 .wp-block-column:nth-of-type(2) .hero a {
+  background-color: #00b3b0;
+  margin: 0 10px 10px 0;
+}
+
+button.nav-toggle:hover, .blocks-row-1 .wp-block-column:nth-of-type(1) a.nav-toggle:hover,
+.blocks-row-1 .wp-block-column:nth-of-type(2) a.nav-toggle:hover {
+  padding: 0.5rem 1.15rem;
+}
+
+.read-more {
+  border: none;
+  padding: 0.5rem 1.15rem;
+  color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  display: inline-block;
+  background-color: #00b3b0;
+  margin-top: 0.5rem;
+}
+.read-more:hover {
+  opacity: 0.8;
+  padding-right: 2rem;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+.read-more:hover .fa-arrow-right {
+  transform: translateX(20px);
+}
+
+/*//////////////HOME\\\\\\\\\\\\\\\\\\\\*/
+/*Highlights blocks*/
+.highlights {
+  text-align: center;
+  background-color: #f3f5f7;
+  padding: 0.75rem 1rem;
+}
+.highlights .wp-block-column p:first-of-type {
+  color: #00b3b0;
+  font-size: 5.313rem;
+}
+@media (max-width: 1100px) {
+  .highlights .wp-block-column p:first-of-type {
+    font-size: 2.25rem;
+  }
+}
+.highlights .wp-block-column p {
+  font-size: 0.875rem;
+}
+.highlights h2 {
+  font-weight: bold;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+@media (max-width: 800px) {
+  .wp-block-columns.highlights {
+    flex-direction: column;
+  }
+}
+
+/*blocks - first row (after Highlights)*/
+.blocks-row-1,
+.blocks-row-2 {
+  margin-top: 2rem;
+}
+.blocks-row-1 .wp-block-column,
+.blocks-row-2 .wp-block-column {
+  padding: 1rem 1rem 0.25rem 1rem;
+}
+.blocks-row-1 p,
+.blocks-row-2 p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.blocks-row-1 h3,
+.blocks-row-2 h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.blocks-row-1 .fa-arrow-right,
+.blocks-row-2 .fa-arrow-right {
+  padding-left: 1rem;
+}
+
+.blocks-row-1 .wp-block-column:nth-of-type(1),
+.blocks-row-1 .wp-block-column:nth-of-type(2) {
+  background-color: #00b3b0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(1) h3,
+.blocks-row-1 .wp-block-column:nth-of-type(1) p,
+.blocks-row-1 .wp-block-column:nth-of-type(2) h3,
+.blocks-row-1 .wp-block-column:nth-of-type(2) p {
+  color: white;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(1) p:last-of-type,
+.blocks-row-1 .wp-block-column:nth-of-type(2) p:last-of-type {
+  align-self: flex-end;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(1) a,
+.blocks-row-1 .wp-block-column:nth-of-type(2) a {
+  background-color: #00b3b0;
+  border: 1px solid white;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(3) {
+  background-color: #f3f5f7;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(3) h3 {
+  margin-bottom: 2rem;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(3) h4 {
+  font-weight: bold;
+  padding-top: 0.5rem;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(3) h4:first-of-type {
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+.blocks-row-1 .wp-block-column:nth-of-type(3) p:not(:last-child) {
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  padding-bottom: 0.5rem;
+}
+@media (max-width: 900px) {
+  .blocks-row-1 {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .blocks-row-1 .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+}
+
+/*//////////////BOARD\\\\\\\\\\\\\\\\\\\\*/
+.board-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.board-grid h2 {
+  font-size: 1rem;
+}
+.board-grid h2:first-of-type {
+  color: #00b3b0;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+.board-grid p {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+.board-grid a {
+  color: #00b3b0;
+  transition: all 0.3s linear;
+}
+.board-grid a:hover {
+  opacity: 0.8;
 }
 
 /*# sourceMappingURL=style.css.map */

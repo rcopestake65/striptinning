@@ -1,0 +1,40 @@
+//utility colors
+$clr-white: hsl(0, 0%, 100%);
+$clr-black: hsl(0, 0%, 0%);
+
+//branding colors
+$clr-main: hsl(179, 100%, 35%);
+$clr-grey: hsl(210, 20%, 96%);
+$clr-dark: hsl(0, 0%, 20%);
+
+//branding colors hover & other variants
+$clr-main-hover: hsl(179, 100%, 35%, 0.5);
+$clr-dark-grey: hsl(0, 0%, 20%, 0.5);
+//fonts
+$font-stack: "Open Sans", sans-serif;
+$font-size-base: 1rem;
+
+//font-sizes
+$fs-14: 0.875rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-22: 1.375rem;
+$fs-24: 1.5rem;
+$fs-30: 1.875rem;
+$fs-36: 2.25rem;
+$fs-60: 3.75rem;
+$fs-85: 5.313rem;
+
+//media queries
+$br-small: 768px;
+$br-medium: 800px;
+
+@mixin below($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+//transitions
+$transition: all 0.3s linear;

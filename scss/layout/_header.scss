@@ -1,0 +1,159 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HEADER & NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+/*hero for home page*/
+.hero {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(../img/hero-01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 127px;
+    max-width: 950px;
+    h2 {
+        color: $clr-white;
+        font-size: $fs-36;
+        align-self: center;
+        padding-left: 2rem;
+    }
+    button {
+        align-self: flex-end;
+    }
+    @include below(800px) {
+        display: none;
+    }
+}
+
+.nav-header {
+    display: flex;
+    //justify-content: space-between;
+    gap: 5rem;
+    @include below(800px) {
+        gap: 2rem;
+    }
+}
+
+.menu-container {
+    display: none;
+    //position: relative;
+    @include below(800px) {
+        display: block;
+    }
+}
+.nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: $clr-main;
+    transition: $transition;
+}
+.nav-toggle:hover {
+    background-color: $clr-main-hover;
+    cursor: pointer;
+}
+.mobile-menu-container {
+    height: 0;
+    overflow: hidden;
+    transition: $transition;
+}
+/*shared styles for menu ul*/
+#nav_menu-2 {
+    list-style-type: none;
+}
+
+.mobile-menu,
+.menu {
+    background-color: $clr-grey;
+    font-size: $fs-14;
+    padding: 0 5px;
+
+    a {
+        padding: 0.5rem 0;
+        transform: $transition;
+        color: $clr-dark;
+        display: inline-block;
+        width: 90%;
+        transition: $transition;
+    }
+    a:hover {
+        color: $clr-white;
+    }
+    li {
+        padding-left: 10px;
+        border-bottom: 1px solid $clr-dark-grey;
+        transition: $transition;
+    }
+    li:last-of-type {
+        border-bottom: none;
+    }
+    .fa-chevron-right {
+        color: $clr-dark;
+        padding-right: 5px;
+    }
+    li:hover {
+        background-color: $clr-main;
+        border-bottom: 1px solid $clr-white;
+    }
+    li.last-of-type:hover {
+        border-bottom: none;
+    }
+    li:hover:before {
+        color: $clr-white;
+    }
+}
+.mobile-menu {
+    margin-top: 0.5rem;
+}
+.page-title {
+    @include below(800px) {
+        display: none;
+    }
+}
+.page-title-mobile h1 {
+    display: none;
+    @include below(800px) {
+        display: block;
+        font-size: $fs-20;
+    }
+}
+.sidebar {
+    background-color: $clr-grey;
+    h2 {
+        font-size: $fs-18;
+        padding: 10px 0 0 10px;
+    }
+}
+/*logo hover effect*/
+.logo {
+    position: relative;
+    z-index: 1;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.page-homepage {
+    .logo {
+        cursor: default;
+    }
+}
+.go-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 127px;
+    height: 127px;
+    z-index: 2;
+    transition: $transition;
+}
+.go-home-hover {
+    height: 50px;
+    width: 50px;
+    top: -3px;
+    left: -3px;
+    -webkit-box-shadow: -2px -2px 0px 1px rgba(0, 179, 176, 0.97);
+    box-shadow: -2px -2px 0px 1px rgba(0, 179, 176, 0.97);
+    cursor: pointer;
+}

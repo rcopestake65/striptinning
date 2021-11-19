@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+/*//////////////BOARD\\\\\\\\\\\\\\\\\\\\*/
+
+.board-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    h2 {
+        font-size: $fs-16;
+    }
+    h2:first-of-type {
+        color: $clr-main;
+        font-weight: bold;
+        padding-top: 1rem;
+    }
+    p {
+        font-size: $fs-14;
+        font-weight: normal;
+    }
+    a {
+        color: $clr-main;
+        transition: $transition;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

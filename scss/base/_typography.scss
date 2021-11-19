@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+/*
+//////////////////////GENERAL TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+There will be other typography styles specific to items elsewhere 
+in the css
+*/
+p {
+  padding-bottom: 1rem;
+  font-size: $fs-20;
+  color: $clr-black;
+  font-weight: normal;
+}
+p:first-of-type {
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: $clr-white;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}

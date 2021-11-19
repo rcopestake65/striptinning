@@ -1,5 +1,3 @@
-<?php if(have_posts()): while(have_posts()): the_post();?>
-
 <div class="page-container">
 
     <div class="sidebar-container">
@@ -11,16 +9,12 @@
     </div>
     <div class="content">
         <div class="page-title-mobile">
-            <h1><?php the_title();?></h1>
-        </div>
-        <?php if(has_post_thumbnail()):?>
-        <div class="img-zoom"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>
 
-        <?php endif;?>
+        </div>
+        <?php if(have_posts()): while(have_posts()): the_post();?>
+        <h1><?php the_title();?></h1>
         <?php the_content();?>
+        <?php endwhile; else: endif;?>
     </div>
 
 </div>
-
-
-<?php endwhile; else: endif;?>

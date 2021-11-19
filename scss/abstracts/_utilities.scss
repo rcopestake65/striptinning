@@ -1,0 +1,13 @@
+/*image hover effect*/
+.img-zoom {
+    overflow: hidden;
+    margin: 0 auto;
+}
+.img-zoom img {
+    max-width: 100%;
+    transition: 0.8s all ease-in-out;
+}
+
+.img-zoom:hover img {
+    transform: scale(1.1);
+}

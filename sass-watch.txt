@@ -1,0 +1,1 @@
+sass --watch ../striptinning/scss/style.scss:css/style.css

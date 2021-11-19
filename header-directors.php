@@ -15,4 +15,4 @@
 
 <body <?php body_class($post->post_type . '-' . $post->post_name); ?>>
     <div class="container">
-        <?php get_template_part('template-parts/section', 'header');?>
+        <?php get_template_part('template-parts/section', 'headerDirectors');?>

@@ -1,12 +1,16 @@
 const toggleBtn = document.querySelector(".nav-toggle");
 const mobileMenuContainer = document.querySelector(".mobile-menu-container");
 const mobileMenu = document.querySelector(".mobile-menu");
+const openBtnIcon = document.querySelector(".fa-bars");
+const closeBtnIcon = document.querySelector(".fa-times");
 
 toggleBtn.addEventListener("click", function () {
   const containerHeight = mobileMenuContainer.getBoundingClientRect().height;
   const linksHeight = mobileMenu.getBoundingClientRect().height;
-  console.log(linksHeight);
-  console.log(containerHeight);
+  closeBtnIcon.classList.toggle("hide");
+  openBtnIcon.classList.toggle("hide");
+  //console.log(linksHeight);
+  //console.log(containerHeight);
   if (containerHeight === 0) {
     mobileMenuContainer.style.height = `${linksHeight + 20}px`;
   } else {
@@ -17,17 +21,17 @@ toggleBtn.addEventListener("click", function () {
 });
 
 //logo hover effect
+const frontPage = document.querySelector(".home");
 const logo = document.querySelector(".logo");
-const gohome = document.querySelector(".go-home");
-
-logo.addEventListener("mouseenter", function () {
-  //console.log("hovered");
-  gohome.classList.add("go-home-hover");
-});
-logo.addEventListener("mouseleave", function () {
-  gohome.classList.remove("go-home-hover");
-});
-
+if (!frontPage) {
+  const gohome = document.querySelector(".go-home");
+  logo.addEventListener("mouseenter", function () {
+    gohome.classList.add("go-home-hover");
+  });
+  logo.addEventListener("mouseleave", function () {
+    gohome.classList.remove("go-home-hover");
+  });
+}
 //insert font awesome icon into menu
 const menuListItem = document.querySelectorAll(".menu-item");
 //console.log(menuListItem);

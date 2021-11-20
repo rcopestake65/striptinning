@@ -1,4 +1,4 @@
-<?php get_header('directors');?>
+<?php get_header();?>
 
 
 

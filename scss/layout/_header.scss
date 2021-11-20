@@ -49,9 +49,10 @@
     right: 1rem;
     background-color: $clr-main;
     transition: $transition;
+    width: 50px;
 }
 .nav-toggle:hover {
-    background-color: $clr-main-hover;
+    background-color: $clr-main-dark;
     cursor: pointer;
 }
 .mobile-menu-container {
@@ -96,6 +97,9 @@
     li:hover {
         background-color: $clr-main;
         border-bottom: 1px solid $clr-white;
+    }
+    li:last-of-type:hover {
+        border-bottom: none;
     }
     li.last-of-type:hover {
         border-bottom: none;

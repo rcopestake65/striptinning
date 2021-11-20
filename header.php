@@ -13,6 +13,6 @@
     <?php wp_head();?>
 </head>
 
-<body <?php body_class($post->post_type . '-' . $post->post_name); ?>>
+<body <?php body_class(); ?>>
     <div class="container">
         <?php get_template_part('template-parts/section', 'header');?>

@@ -14,3 +14,8 @@
 .hide {
     display: none !important;
 }
+
+/*WP puts sidebar content in an li!*/
+li.widget {
+    list-style: none;
+}

@@ -12,7 +12,9 @@
             <?php if (is_front_page()) : ?>
             <div class="hero">
                 <h2>Banner text goes here</h2>
-                <button>Find out more <i class="fas fa-arrow-right"></i></button>
+                <div class="hero-btn"> <button><a href="#">Find out more <i class="fas fa-arrow-right"></i></a></button>
+                </div>
+
             </div>
             <?php elseif (is_post_type_archive('directors') ): ?>
             <div class="page-title">

@@ -1,5 +1,5 @@
 @use "../abstracts/variables" as *;
-@use "../components/buttons" as *;
+@use "../components/buttons";
 /*//////////////HOME\\\\\\\\\\\\\\\\\\\\*/
 
 /*Highlights blocks*/
@@ -32,12 +32,12 @@
 /*blocks - first row (after Highlights)*/
 .blocks-row-1,
 .blocks-row-2 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     .wp-block-column {
-        padding: 1rem 1rem 0.25rem 1rem;
+        padding: 1rem 0.5rem 0.25rem 1.5rem;
     }
     p {
-        font-size: $fs-16;
+        font-size: $fs-14;
         font-weight: normal;
     }
     h3 {
@@ -87,6 +87,59 @@
             padding-bottom: 0.5rem;
         }
     }
+    @include below(900px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        .wp-block-column:not(:first-child) {
+            margin-left: 0;
+        }
+    }
+}
+.blocks-row-2 {
+    .wp-block-column:nth-of-type(1) {
+        background-color: $clr-main;
+        color: $clr-white;
+        h3 {
+            margin-bottom: 2rem;
+        }
+        h4 {
+            font-weight: bold;
+            padding-top: 0.5rem;
+        }
+        h4:first-of-type {
+            border-top: 1px solid $clr-dark-grey;
+        }
+        p {
+            color: $clr-white;
+        }
+        p:not(:last-child) {
+            border-bottom: 1px solid $clr-dark-grey;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
+.blocks-row-2 {
+    .wp-block-column:nth-of-type(2) {
+        background-color: $clr-dark;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3,
+        p {
+            color: $clr-white;
+        }
+
+        p:last-of-type {
+            align-self: flex-end;
+        }
+        a {
+            @extend button;
+            background-color: $clr-dark-grey;
+            border: 1px solid $clr-white;
+        }
+    }
+
     @include below(900px) {
         flex-direction: column;
         gap: 0.5rem;

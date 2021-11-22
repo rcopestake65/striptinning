@@ -10,6 +10,9 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: $transition;
+    a {
+        color: $clr-white;
+    }
     &:hover {
         //opacity: 0.8;
         padding-right: 2rem;
@@ -51,4 +54,14 @@ button.nav-toggle {
             transform: translateX(20px);
         }
     }
+}
+// .hero-btn {
+//     transform: translateX(-100px);
+// }
+a.test {
+    background-color: blue;
+    display: inline-block;
+}
+.hero-btn {
+    display: block;
 }

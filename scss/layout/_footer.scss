@@ -2,3 +2,35 @@
 /*
 ///////////////////////////FOOTER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+.footer-container {
+    background-color: $clr-grey;
+    padding-bottom: 10rem;
+    margin-top: 5rem;
+}
+.footer-inner-container {
+    display: flex;
+    gap: 2rem;
+    h3 {
+        color: $clr-main;
+        font-weight: bold;
+        font-size: $fs-16;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: $fs-14;
+        font-weight: normal;
+    }
+    a {
+        color: $clr-dark;
+        transition: $transition;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include below(800px) {
+        flex-direction: column;
+    }
+}
+.footer-inner-container > * {
+    flex-basis: 100%;
+}

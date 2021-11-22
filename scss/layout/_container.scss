@@ -35,4 +35,8 @@
 /*GUTENBERG ADJUSTMENTS & ADAPTATIONS*/
 .wp-block-columns {
     margin-bottom: 0;
+    gap: 1rem;
+}
+.wp-block-column:not(:first-child) {
+    margin-left: 0 !important;
 }

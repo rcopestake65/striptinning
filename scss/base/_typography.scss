@@ -9,6 +9,9 @@ p {
   font-size: $fs-20;
   color: $clr-black;
   font-weight: normal;
+  @include below(800px) {
+    font-size: $fs-16;
+  }
 }
 p:first-of-type {
   font-weight: bold;

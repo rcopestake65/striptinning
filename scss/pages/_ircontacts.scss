@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+@use "../components/buttons";
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    gap: 1rem;
+    @include below($br-small) {
+        grid-template-columns: 1fr;
+    }
+    .contacts-item {
+        border-top: 1px solid $clr-dark-grey;
+        padding-bottom: 1rem;
+        h3 {
+            color: $clr-main;
+            font-weight: bold;
+        }
+        p {
+            padding-bottom: 0;
+        }
+        p:nth-of-type(5) {
+            padding-top: 1rem;
+        }
+        a {
+            color: $clr-black;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

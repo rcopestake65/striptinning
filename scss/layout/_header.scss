@@ -8,21 +8,28 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    background-image: url(../img/hero-01.jpg);
+    background-image: url(../img/hero-03.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 127px;
     max-width: 950px;
+
     h2 {
         color: $clr-white;
-        font-size: $fs-36;
+        font-size: $fs-30;
         align-self: center;
         padding-left: 2rem;
+        line-height: 1;
+        flex: 3;
+        @include below(1200px) {
+            font-size: $fs-20;
+        }
     }
     button {
         align-self: flex-end;
+        flex: 1;
     }
-    @include below(800px) {
+    @include below($br-medium) {
         display: none;
     }
 }
@@ -31,7 +38,7 @@
     display: flex;
     //justify-content: space-between;
     gap: 5rem;
-    @include below(800px) {
+    @include below($br-medium) {
         gap: 2rem;
     }
 }
@@ -39,7 +46,7 @@
 .menu-container {
     display: none;
     //position: relative;
-    @include below(800px) {
+    @include below($br-medium) {
         display: block;
     }
 }
@@ -63,6 +70,7 @@
 /*shared styles for menu ul*/
 #nav_menu-2 {
     list-style-type: none;
+    //display: block;
 }
 
 .mobile-menu,
@@ -108,23 +116,32 @@
         color: $clr-white;
     }
 }
+
 .mobile-menu {
     margin-top: 0.5rem;
 }
 .page-title {
-    @include below(800px) {
+    @include below($br-medium) {
         display: none;
     }
 }
 .page-title-mobile h1 {
     display: none;
-    @include below(800px) {
+    @include below($br-medium) {
         display: block;
-        font-size: $fs-20;
+        font-size: $fs-24;
+    }
+}
+.home {
+    .page-title-mobile {
+        h1 {
+            display: none;
+        }
     }
 }
 .sidebar {
     background-color: $clr-grey;
+    overflow: hidden;
     h2 {
         font-size: $fs-18;
         padding: 10px 0 0 10px;
@@ -134,6 +151,7 @@
 .logo {
     position: relative;
     z-index: 1;
+    flex-shrink: 0;
     &:hover {
         cursor: pointer;
     }

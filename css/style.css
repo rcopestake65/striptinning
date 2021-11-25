@@ -106,7 +106,7 @@ in the css
 */
 p {
   padding-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: black;
   font-weight: normal;
 }
@@ -116,8 +116,9 @@ p {
   }
 }
 
-p:first-of-type {
+.content > p:first-of-type {
   font-weight: bold;
+  font-size: 1.125rem;
 }
 
 a {
@@ -130,6 +131,7 @@ a:hover {
 
 ul {
   list-style: none;
+  list-style-position: inside;
   margin: 0;
   padding: 0;
 }
@@ -161,9 +163,25 @@ body {
   margin: 0 auto;
 }
 
+.page-transition {
+  background-color: #00b3b0;
+  position: absolute;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*
 ///////////////////////////CONTAINERS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+/*full width*/
+.full-width {
+  background-color: #00b3b0;
+}
+
 /*main container*/
 .container {
   padding: 3rem 1rem 0 1rem;
@@ -183,6 +201,7 @@ body {
 }
 
 .content {
+  width: 100%;
   max-width: 945px;
   padding-left: 1em;
 }
@@ -215,7 +234,7 @@ body {
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
-  background-image: url(../img/hero-01.jpg);
+  background-image: url(../img/hero-03.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 127px;
@@ -223,12 +242,20 @@ body {
 }
 .hero h2 {
   color: white;
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   align-self: center;
   padding-left: 2rem;
+  line-height: 1;
+  flex: 3;
+}
+@media (max-width: 1200px) {
+  .hero h2 {
+    font-size: 1.25rem;
+  }
 }
 .hero button {
   align-self: flex-end;
+  flex: 1;
 }
 @media (max-width: 800px) {
   .hero {
@@ -348,12 +375,17 @@ body {
 @media (max-width: 800px) {
   .page-title-mobile h1 {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
+}
+
+.home .page-title-mobile h1 {
+  display: none;
 }
 
 .sidebar {
   background-color: #f3f5f7;
+  overflow: hidden;
 }
 .sidebar h2 {
   font-size: 1.125rem;
@@ -364,6 +396,7 @@ body {
 .logo {
   position: relative;
   z-index: 1;
+  flex-shrink: 0;
 }
 .logo:hover {
   cursor: pointer;
@@ -430,6 +463,14 @@ body {
 @media (max-width: 800px) {
   .footer-inner-container {
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .footer-inner-container .wp-block-column {
+    align-self: center;
   }
 }
 
@@ -457,13 +498,12 @@ button a, .blocks-row-1 .wp-block-column:nth-of-type(1) a a,
 }
 button:hover, .blocks-row-1 .wp-block-column:nth-of-type(1) a:hover,
 .blocks-row-1 .wp-block-column:nth-of-type(2) a:hover, .blocks-row-2 .wp-block-column:nth-of-type(2) a:hover {
-  padding-right: 2rem;
   -webkit-box-shadow: 5px 5px 0px -2px #ffffff;
   box-shadow: 5px 5px 0px -2px #ffffff;
 }
 button:hover .fa-arrow-right, .blocks-row-1 .wp-block-column:nth-of-type(1) a:hover .fa-arrow-right,
 .blocks-row-1 .wp-block-column:nth-of-type(2) a:hover .fa-arrow-right, .blocks-row-2 .wp-block-column:nth-of-type(2) a:hover .fa-arrow-right {
-  transform: translateX(20px);
+  transform: translateX(15px);
 }
 
 .hero button, .hero .blocks-row-1 .wp-block-column:nth-of-type(1) a, .blocks-row-1 .wp-block-column:nth-of-type(1) .hero a,
@@ -478,7 +518,7 @@ button.nav-toggle:hover, .blocks-row-1 .wp-block-column:nth-of-type(1) a.nav-tog
   padding: 0.5rem 1.15rem;
 }
 
-.read-more {
+.btn-link {
   border: none;
   padding: 0.5rem 1.15rem;
   color: white !important;
@@ -489,13 +529,15 @@ button.nav-toggle:hover, .blocks-row-1 .wp-block-column:nth-of-type(1) a.nav-tog
   background-color: #00b3b0;
   margin-top: 0.5rem;
 }
-.read-more:hover {
-  padding-right: 2rem;
+.btn-link .fa-arrow-right {
+  padding-left: 5px;
+}
+.btn-link:hover {
   -webkit-box-shadow: 5px 5px 0px -2px #008f8c;
   box-shadow: 5px 5px 0px -2px #008f8c;
 }
-.read-more:hover .fa-arrow-right {
-  transform: translateX(20px);
+.btn-link:hover .fa-arrow-right {
+  transform: translateX(15px);
 }
 
 a.test {
@@ -507,7 +549,23 @@ a.test {
   display: block;
 }
 
+a.block-btn {
+  display: block;
+}
+
 /*//////////////HOME\\\\\\\\\\\\\\\\\\\\*/
+.home .content ul {
+  list-style-type: square;
+}
+.home .content ul li {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+.home .content ul li::marker {
+  color: #00b3b0;
+  font-size: 1.5rem;
+}
+
 /*Highlights blocks*/
 .highlights {
   text-align: center;
@@ -550,7 +608,6 @@ a.test {
 .blocks-row-1 p,
 .blocks-row-2 p {
   font-size: 0.875rem;
-  font-weight: normal;
 }
 .blocks-row-1 h3,
 .blocks-row-2 h3 {
@@ -666,6 +723,11 @@ a.test {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
 }
+@media (max-width: 1000px) {
+  .board-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .board-grid h2 {
   font-size: 1rem;
 }
@@ -676,7 +738,6 @@ a.test {
 }
 .board-grid p {
   font-size: 0.875rem;
-  font-weight: normal;
 }
 .board-grid a {
   color: #00b3b0;
@@ -684,6 +745,140 @@ a.test {
 }
 .board-grid a:hover {
   opacity: 0.8;
+}
+
+/*////////////////PAGE - CALENDAR\\\\\\\\\\\\\\\\\\\*/
+.page-financial-calendar .content > h2 {
+  color: #00b3b0;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+  gap: 0;
+  margin-top: 2rem;
+}
+@media (max-width: 800px) {
+  .calendar-grid {
+    width: 95%;
+  }
+}
+.calendar-grid .title:nth-of-type(1) {
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+.calendar-grid .date:nth-of-type(2) {
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+@media (max-width: 500px) {
+  .calendar-grid .date:nth-of-type(2) {
+    border-top: none;
+  }
+}
+.calendar-grid .title {
+  font-weight: bold;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  padding: 0.5rem 0;
+}
+@media (max-width: 500px) {
+  .calendar-grid .title {
+    border: none;
+  }
+}
+.calendar-grid .date {
+  text-align: right;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+  padding: 0.5rem 0;
+}
+@media (max-width: 500px) {
+  .calendar-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .calendar-grid .date {
+    text-align: left;
+  }
+}
+
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+  gap: 1rem;
+}
+@media (max-width: 500px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contacts-grid .contacts-item {
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+  padding-bottom: 1rem;
+}
+.contacts-grid .contacts-item h3 {
+  color: #00b3b0;
+  font-weight: bold;
+}
+.contacts-grid .contacts-item p {
+  padding-bottom: 0;
+}
+.contacts-grid .contacts-item p:nth-of-type(5) {
+  padding-top: 1rem;
+}
+.contacts-grid .contacts-item a {
+  color: black;
+}
+.contacts-grid .contacts-item a:hover {
+  text-decoration: underline;
+}
+
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+.page-investment-case .full-width {
+  margin-top: 2rem;
+}
+.page-investment-case .grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 800px) {
+  .page-investment-case .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .page-investment-case .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.page-investment-case .grid .case-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+.page-investment-case .grid .case-item img {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .page-investment-case .grid .case-item img {
+    width: 30%;
+  }
+}
+.page-investment-case .grid .case-item p {
+  font-size: 0.875rem;
+  color: white;
+  text-align: center;
+}
+
+.investment-cases {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

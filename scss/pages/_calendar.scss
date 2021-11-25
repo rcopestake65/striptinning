@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as *;
+@use "../components/buttons";
+/*////////////////PAGE - CALENDAR\\\\\\\\\\\\\\\\\\\*/
+
+.page-financial-calendar .content > h2 {
+    color: $clr-main;
+    font-weight: bold;
+    font-size: $fs-30;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    gap: 0;
+    margin-top: 2rem;
+    @include below($br-medium) {
+        width: 95%;
+    }
+    .title:nth-of-type(1) {
+        border-top: 1px solid $clr-dark-grey;
+    }
+    .date:nth-of-type(2) {
+        border-top: 1px solid $clr-dark-grey;
+        @include below($br-small) {
+            border-top: none;
+        }
+    }
+    .title {
+        font-weight: bold;
+        border-bottom: 1px solid $clr-dark-grey;
+        padding: 0.5rem 0;
+        @include below($br-small) {
+            border: none;
+        }
+    }
+    .date {
+        text-align: right;
+        border-bottom: 1px solid $clr-dark-grey;
+        padding: 0.5rem 0;
+    }
+    @include below($br-small) {
+        width: 100%;
+        grid-template-columns: 1fr;
+        .date {
+            text-align: left;
+        }
+    }
+}

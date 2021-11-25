@@ -16,11 +16,11 @@ function loadjs()
     wp_register_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', null, 1, true );
     wp_enqueue_script('jQuery');
 
-    //wp_register_script( 'gsap-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), false, true );
-    //wp_enqueue_script('gsap-cdn');
+    wp_register_script( 'gsap-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', array(), false, true );
+    wp_enqueue_script('gsap-cdn');
 
-    //wp_register_script( 'gsap-scroll', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js', array(), false, true );
-    //wp_enqueue_script('gsap-scroll');
+    wp_register_script( 'gsap-scroll', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js', array(), false, true );
+    wp_enqueue_script('gsap-scroll');
 
 
     
@@ -83,6 +83,7 @@ register_sidebar(
 }
 add_action('widgets_init', 'footer');
 ?>
+
 <?php
 //custom post type
 
@@ -103,4 +104,27 @@ register_post_type('directors', $args);
 add_action('init', 'directors');
 
 
+?>
+<?php
+// Make sure featured images are enabled
+add_theme_support( 'post-thumbnails' );
+
+// Add featured image sizes
+add_image_size( 'featured-large', 640, 294, true ); // width, height, crop
+add_image_size( 'featured-small', 320, 147, true );
+
+// Add other useful image sizes for use through Add Media modal
+add_image_size( 'medium-width', 480 );
+add_image_size( 'medium-height', 9999, 480 );
+add_image_size( 'medium-something', 480, 480 );
+
+// Register the three useful image sizes for use in Add Media modal
+add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
+function wpshout_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'medium-width' => __( 'Medium Width' ),
+        'medium-height' => __( 'Medium Height' ),
+        'medium-something' => __( 'Medium Something' ),
+    ) );
+}
 ?>

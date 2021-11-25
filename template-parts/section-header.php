@@ -1,9 +1,10 @@
 <header>
     <nav>
         <div class="nav-header">
-            <div class="logo">
+            <div class="logo" id=logo>
                 <a href="<?php echo get_bloginfo('url') . '/'; ?>"><img
-                        src="<?php bloginfo('template_url') ?>/img/strip-tinning.png" alt="Strip Tinning Logo"></a>
+                        src="<?php bloginfo('template_url') ?>/img/strip-tinning.png" alt="Strip Tinning Logo"
+                        id="logo"></a>
                 <?php if (!is_front_page()) : echo '<div class="go-home"></div>'; endif;
                 ?>
 
@@ -11,7 +12,8 @@
 
             <?php if (is_front_page()) : ?>
             <div class="hero">
-                <h2>Banner text goes here</h2>
+                <h2 id="banner">Maintaining and expanding our automotive industry leadership in high performance,
+                    flexible connectors</h2>
                 <div class="hero-btn"> <button><a href="#">Find out more <i class="fas fa-arrow-right"></i></a></button>
                 </div>
 

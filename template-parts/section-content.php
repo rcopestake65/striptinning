@@ -11,7 +11,10 @@
     </div>
     <div class="content">
         <div class="page-title-mobile">
+
             <h1><?php the_title();?></h1>
+
+
         </div>
         <?php if(has_post_thumbnail()):?>
         <div class="img-zoom"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>

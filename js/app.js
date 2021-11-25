@@ -17,7 +17,7 @@ toggleBtn.addEventListener("click", function () {
     mobileMenuContainer.style.height = 0;
   }
   //mobileMenuContainer.classList.toggle("show-mobile-menu");
-  console.log(containerHeight);
+  //console.log(containerHeight);
 });
 
 //logo hover effect
@@ -48,108 +48,39 @@ menuListItem.forEach(function (item) {
   });
 });
 
+//Date in footer
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();
+
+//const headerContainer = document.querySelectorAll('.wp-block-column');
+const getHeaders = document.querySelectorAll(".wp-block-column h3");
+
+getHeaders.forEach(function (item) {
+  item.classList.add("block-header");
+});
+//console.log(getHeaders);
+
+//add classes to <a>'s
+const getBtns1 = document.querySelectorAll(".wp-block-columns.blocks-row-1 a");
+
+getBtns1.forEach(function (item) {
+  item.classList.add("btn-link");
+});
+const getBtns2 = document.querySelectorAll(".wp-block-columns.blocks-row-2 a");
+
+getBtns2.forEach(function (item) {
+  item.classList.add("btn-link");
+});
+
+const readMoreLink = document.querySelectorAll(".read-more");
+readMoreLink.forEach(function (item) {
+  item.classList.add("btn-link");
+});
 //insert font awesome icon into read-more btn for biogs
-const readMore = document.querySelectorAll(".read-more");
-//console.log(menuListItem);
+const readMore = document.querySelectorAll(".btn-link");
+
 readMore.forEach(function (item) {
   const arrow = document.createElement("i");
   arrow.className = "fas fa-arrow-right";
   item.append(arrow);
 });
-//GSAP
-//home page stuff as test
-
-const home = document.querySelector(".home");
-
-if (home) {
-  gsap.set([".hero-btn", ".logo"], { opacity: 0, y: -50 });
-  gsap.to([".hero-btn", ".logo"], {
-    opacity: 1,
-    y: 0,
-    duration: 0.75,
-  });
-  gsap.set(".hero h2", { opacity: 0, x: -50 });
-  gsap.to(".hero h2", { opacity: 1, x: 0, duration: 0.75 });
-
-  gsap.set(".sidebar", { opacity: 0, x: -30 });
-  gsap.to(".sidebar", { opacity: 1, x: 0, duration: 0.75 });
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.set(".highlights p:first-of-type", { opacity: 0 });
-  gsap.to(".highlights p:first-of-type", {
-    scrollTrigger: {
-      trigger: ".highlights",
-      start: "top bottom",
-    },
-    opacity: 1,
-    duration: 1,
-    stagger: 0.5,
-  });
-
-  gsap.set([".wp-block-column h2", ".wp-block-column h3"], {
-    opacity: 0,
-    y: +10,
-  });
-  gsap.to([".wp-block-column h2", ".wp-block-column h3"], {
-    scrollTrigger: {
-      trigger: ".highlights",
-      start: "top bottom",
-    },
-    opacity: 1,
-    y: 0,
-  });
-
-  gsap.set(
-    [
-      ".wp-block-columns.blocks-row-1 h3",
-      ".wp-block-columns.blocks-row-1 h4",
-      ".wp-block-columns.blocks-row-1 p",
-      ".wp-block-columns.blocks-row-2 h3",
-      ".wp-block-columns.blocks-row-2 h4",
-      ".wp-block-columns.blocks-row-2 p",
-    ],
-    {
-      opacity: 0,
-      y: +10,
-    }
-  );
-  gsap.to(
-    [
-      ".wp-block-columns.blocks-row-1 h3",
-      ".wp-block-columns.blocks-row-1 h4",
-      ".wp-block-columns.blocks-row-1 p",
-    ],
-    {
-      scrollTrigger: {
-        trigger: ".blocks-row-1",
-        start: "top center",
-      },
-      opacity: 1,
-      y: 0,
-      ease: "back",
-      duration: 0.5,
-      stagger: 0.05,
-    }
-  );
-  gsap.to(
-    [
-      ".wp-block-columns.blocks-row-2 h3",
-      ".wp-block-columns.blocks-row-2 h4",
-      ".wp-block-columns.blocks-row-2 p",
-    ],
-    {
-      scrollTrigger: {
-        trigger: ".blocks-row-2",
-        start: "top bottom",
-      },
-      opacity: 1,
-      y: 0,
-      ease: "back",
-      duration: 0.5,
-      stagger: 0.05,
-    }
-  );
-}
-//gsap.to(".test", { scrollTrigger: ".test", x: 200, duration: 12 });
-//gsap.to(".wp-block-column", { opacity: 1, duration: 0.5, stagger: 0.2 });

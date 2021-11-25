@@ -2,13 +2,16 @@
 /*
 ///////////////////////////CONTAINERS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
-
+/*full width*/
+.full-width {
+    background-color: $clr-main;
+}
 /*main container*/
 .container {
     padding: 3rem 1rem 0 1rem;
     margin: 0 auto;
     max-width: 75rem;
-    @include below(800px) {
+    @include below($br-medium) {
         padding-top: 1rem;
     }
 }
@@ -21,11 +24,12 @@
     //gap: 2rem;
 }
 .content {
+    width: 100%;
     max-width: 945px;
     padding-left: 1em;
 }
 .sidebar-container {
-    @include below(800px) {
+    @include below($br-medium) {
         display: none;
     }
 }

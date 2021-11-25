@@ -5,6 +5,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    @include below(1000px) {
+        grid-template-columns: 1fr;
+    }
     h2 {
         font-size: $fs-16;
     }
@@ -15,7 +18,6 @@
     }
     p {
         font-size: $fs-14;
-        font-weight: normal;
     }
     a {
         color: $clr-main;

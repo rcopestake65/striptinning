@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../components/buttons";
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+.page-investment-case {
+    .full-width {
+        margin-top: 2rem;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+        @include below($br-medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include below($br-small) {
+            grid-template-columns: 1fr;
+        }
+
+        .case-item {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+            align-items: center;
+            img {
+                width: 50%;
+                @include below($br-small) {
+                    width: 30%;
+                }
+            }
+            p {
+                font-size: $fs-14;
+                color: $clr-white;
+                text-align: center;
+            }
+        }
+    }
+}
+.investment-cases {
+    color: $clr-white;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}

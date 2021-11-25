@@ -15,3 +15,13 @@ body {
   line-height: 1.5;
   margin: 0 auto;
 }
+.page-transition {
+  background-color: $clr-main;
+  position: absolute;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

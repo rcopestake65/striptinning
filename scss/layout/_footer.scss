@@ -27,10 +27,19 @@
             text-decoration: underline;
         }
     }
-    @include below(800px) {
+    @include below($br-medium) {
         flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .wp-block-column {
+        @include below($br-medium) {
+            align-self: center;
+        }
     }
 }
+
 .footer-inner-container > * {
     flex-basis: 100%;
 }

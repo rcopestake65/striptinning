@@ -6,15 +6,16 @@ in the css
 */
 p {
   padding-bottom: 1rem;
-  font-size: $fs-20;
+  font-size: $fs-16;
   color: $clr-black;
   font-weight: normal;
-  @include below(800px) {
+  @include below($br-medium) {
     font-size: $fs-16;
   }
 }
-p:first-of-type {
+.content > p:first-of-type {
   font-weight: bold;
+  font-size: $fs-18;
 }
 a {
   text-decoration: none;
@@ -24,9 +25,11 @@ a:hover {
 }
 ul {
   list-style: none;
+  list-style-position: inside;
   margin: 0;
   padding: 0;
 }
+
 h1,
 h2,
 h3,

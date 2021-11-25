@@ -13,6 +13,9 @@
     <?php wp_head();?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class();?>>
+    <!-- <div class="page-transition">
+        <img src="<?php bloginfo('template_url') ?>/img/strip-tinning.png" alt="Strip Tinning Logo" id="logo">
+    </div> -->
     <div class="container">
         <?php get_template_part('template-parts/section', 'header');?>

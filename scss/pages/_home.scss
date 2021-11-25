@@ -2,6 +2,20 @@
 @use "../components/buttons";
 /*//////////////HOME\\\\\\\\\\\\\\\\\\\\*/
 
+.home .content {
+    ul {
+        list-style-type: square;
+        li {
+            // border-left: 1rem solid $clr-main;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            &::marker {
+                color: $clr-main;
+                font-size: $fs-24;
+            }
+        }
+    }
+}
 /*Highlights blocks*/
 .highlights {
     text-align: center;
@@ -24,7 +38,7 @@
     }
 }
 .wp-block-columns.highlights {
-    @include below(800px) {
+    @include below($br-medium) {
         flex-direction: column;
     }
 }
@@ -38,7 +52,6 @@
     }
     p {
         font-size: $fs-14;
-        font-weight: normal;
     }
     h3 {
         font-size: $fs-24;

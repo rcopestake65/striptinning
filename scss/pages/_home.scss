@@ -2,20 +2,6 @@
 @use "../components/buttons";
 /*//////////////HOME\\\\\\\\\\\\\\\\\\\\*/
 
-.home .content {
-    ul {
-        list-style-type: square;
-        li {
-            // border-left: 1rem solid $clr-main;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            &::marker {
-                color: $clr-main;
-                font-size: $fs-24;
-            }
-        }
-    }
-}
 /*Highlights blocks*/
 .highlights {
     text-align: center;
@@ -56,13 +42,38 @@
     h3 {
         font-size: $fs-24;
         font-weight: bold;
+        color: $clr-white;
     }
     .fa-arrow-right {
         padding-left: 1rem;
     }
 }
 .blocks-row-1 {
-    .wp-block-column:nth-of-type(1),
+    .wp-block-column:nth-of-type(1) {
+        background-color: $clr-dark;
+        h3,
+        p {
+            color: $clr-white;
+        }
+        h3 {
+            margin-bottom: 2rem;
+        }
+        h4 {
+            font-size: $fs-30;
+            color: $clr-main;
+            font-weight: bold;
+            border-top: 1px solid $clr-white;
+            border-bottom: 1px solid $clr-white;
+            padding: 0.5rem 0;
+        }
+        span {
+            color: $clr-main;
+            font-weight: bold;
+        }
+        p:first-of-type {
+            padding-top: 1rem;
+        }
+    }
     .wp-block-column:nth-of-type(2) {
         background-color: $clr-main;
         display: flex;

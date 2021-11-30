@@ -2,6 +2,20 @@
 @use "../components/buttons";
 /*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
 .page-investment-case {
+    .content {
+        ul {
+            list-style-type: square;
+            li {
+                // border-left: 1rem solid $clr-main;
+                margin-bottom: 1rem;
+                padding-left: 1rem;
+                &::marker {
+                    color: $clr-main;
+                    font-size: $fs-24;
+                }
+            }
+        }
+    }
     .full-width {
         margin-top: 2rem;
     }

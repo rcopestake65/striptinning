@@ -1,12 +1,6 @@
 <div class="page-container">
 
-    <div class="sidebar-container">
-        <div class="sidebar">
-            <h2>Investors</h2>
-            <?php get_template_part('template-parts/section', 'menu-sidebar');?>
-        </div>
-
-    </div>
+    <?php get_template_part('template-parts/section', 'menu-sidebar');?>
     <div class="content">
         <div class="page-title-mobile">
 

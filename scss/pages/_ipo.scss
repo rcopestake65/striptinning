@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+/*//////////////IPO DOCS\\\\\\\\\\\\\\\\\\\\*/
+
+.page-ipo-documents {
+    table {
+        th {
+            text-align: left;
+        }
+        th,
+        td {
+            border-bottom: 1px solid $clr-black;
+            padding: 0.5rem 0;
+        }
+        td:first-of-type {
+            width: 90%;
+        }
+        a {
+            border-bottom: none;
+            color: $clr-black;
+            &:hover {
+                color: $clr-main;
+            }
+        }
+    }
+}

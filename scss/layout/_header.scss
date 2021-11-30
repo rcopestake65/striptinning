@@ -75,7 +75,7 @@
 
 .mobile-menu,
 .menu {
-    background-color: $clr-grey;
+    // background-color: $clr-grey;
     font-size: $fs-14;
     padding: 0 5px;
 
@@ -94,9 +94,17 @@
         padding-left: 10px;
         border-bottom: 1px solid $clr-dark-grey;
         transition: $transition;
+        background-color: $clr-grey;
     }
     li:last-of-type {
+        margin-top: 1rem;
+    }
+    li:nth-of-type(10),
+    li:nth-of-type(11) {
         border-bottom: none;
+        &:hover {
+            border-bottom: none;
+        }
     }
     .fa-chevron-right {
         color: $clr-dark;
@@ -140,13 +148,14 @@
     }
 }
 .sidebar {
-    background-color: $clr-grey;
+    // background-color: $clr-grey;
     overflow: hidden;
     h2 {
         font-size: $fs-18;
         padding: 10px 0 0 10px;
     }
 }
+
 /*logo hover effect*/
 .logo {
     position: relative;

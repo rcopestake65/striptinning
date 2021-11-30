@@ -93,7 +93,7 @@ $args = array(
     'public' => true,
     'has_archive' => true,
     'show_in_rest' => true,
-    'supports' => array('title', 'editor','thumbnail'),
+    'supports' => array('title', 'editor','thumbnail', 'excerpt'),
     'menu_icon'   => 'dashicons-businesswoman',
     //'taxonomies' => array('board_taxonomy'),
 );

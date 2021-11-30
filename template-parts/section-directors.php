@@ -1,12 +1,6 @@
 <div class="page-container">
 
-    <div class="sidebar-container">
-        <div class="sidebar">
-            <h2>Investors</h2>
-            <?php get_template_part('template-parts/section', 'menu-sidebar');?>
-        </div>
-
-    </div>
+    <?php get_template_part('template-parts/section', 'menu-sidebar');?>
     <div class="content">
 
 
@@ -21,10 +15,10 @@
 
                 <?php endif;?>
 
-                <h2 class="xxxxxxxxxxxxxxxx"> <a href="<?php the_permalink ();?>"><?php the_title();?></a></h2>
+                <h2> <a href="<?php the_permalink ();?>"><?php the_title();?></a></h2>
 
                 <?php the_excerpt();?>
-
+                <a class="read-more" href="<?php the_permalink ();?>">Read more</a>
             </div>
             <?php endwhile; else: endif;?>
         </div>

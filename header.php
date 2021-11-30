@@ -18,4 +18,8 @@
         <img src="<?php bloginfo('template_url') ?>/img/strip-tinning.png" alt="Strip Tinning Logo" id="logo">
     </div> -->
     <div class="container">
+        <!--back to top btn-->
+        <a href="#" class="scroll-link top-link">
+            <i class="fas fa-arrow-up"></i>
+        </a>
         <?php get_template_part('template-parts/section', 'header');?>

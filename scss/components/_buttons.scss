@@ -42,7 +42,7 @@ button.nav-toggle {
     color: $clr-white !important;
     font-weight: bold;
     cursor: pointer;
-    transition: $transition;
+    transition: $transition !important ;
     display: inline-block;
     background-color: $clr-main;
     margin-top: 0.5rem;
@@ -58,16 +58,66 @@ button.nav-toggle {
         }
     }
 }
+.go-back {
+    @extend .btn-link;
+
+    .fa-arrow-left {
+        padding-right: 5px;
+        transition: $transition;
+    }
+    &:hover {
+        //padding-right: 2rem;
+        -webkit-box-shadow: 5px 5px 0px -2px $clr-main-dark;
+        box-shadow: 5px 5px 0px -2px $clr-main-dark;
+        .fa-arrow-left {
+            transform: translateX(-15px);
+        }
+    }
+}
+.sidebar-container .go-back {
+    width: 100%;
+}
+
 // .hero-btn {
 //     transform: translateX(-100px);
 // }
-a.test {
-    background-color: blue;
-    display: inline-block;
-}
+
 .hero-btn {
     display: block;
 }
 a.block-btn {
     display: block;
+}
+//back to top button
+.top-link {
+    font-size: 1.25rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background: $clr-main;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    color: $clr-white;
+    animation: bounce 2s ease-in-out infinite;
+
+    visibility: hidden;
+    z-index: -100;
+}
+.show-link {
+    visibility: visible;
+    z-index: 100;
+}
+@keyframes bounce {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -19,6 +19,7 @@ p {
 }
 a {
   text-decoration: none;
+  transition: $transition;
 }
 a:hover {
   color: $clr-white;
@@ -39,4 +40,25 @@ h6 {
   font-weight: normal;
   padding: 0;
   margin: 0;
+}
+.content :where(h2:not(:first-of-type), h3) {
+  font-size: $fs-16;
+  font-weight: bold;
+}
+.content :where(h2:not(:first-of-type)) {
+  color: $clr-main;
+}
+.content h3 {
+  color: $clr-main;
+}
+.content p a {
+  color: #333333;
+  transition: all 0.3s linear;
+  border-bottom: 1px solid $clr-main;
+}
+.content p a:hover {
+  color: $clr-main;
+}
+.small {
+  font-size: $fs-14;
 }

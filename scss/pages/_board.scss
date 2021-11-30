@@ -26,4 +26,13 @@
             opacity: 0.8;
         }
     }
+    .read-more {
+        align-self: flex-start;
+        margin-top: auto;
+    }
+}
+.board-grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

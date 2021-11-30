@@ -1,9 +1,8 @@
 <?php if(have_posts()): while(have_posts()): the_post();?>
 
 <div class="page-container">
+
     <?php get_template_part('template-parts/section', 'menu-sidebar');?>
-
-
     <div class="content">
         <div class="page-title-mobile">
 
@@ -16,6 +15,7 @@
 
         <?php endif;?>
         <?php the_content();?>
+        <a class="go-back" href="<?php echo get_bloginfo('url') . '/directors '; ?>">Back</a>
     </div>
 
 </div>

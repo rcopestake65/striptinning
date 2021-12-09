@@ -11,7 +11,7 @@
 
         </div>
         <?php if(has_post_thumbnail()):?>
-        <div class="img-zoom"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>"></div>
+        <img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
 
         <?php endif;?>
         <?php the_content();?>

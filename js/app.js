@@ -91,3 +91,51 @@ window.addEventListener("scroll", () => {
     topBtn.classList.remove("show-link");
   }
 });
+
+// finding height of homepage blocks to dynamically set all the same as the largest
+// on screens less than 900px
+if (document.querySelector(".home")) {
+  const blocksRowOne = document.querySelectorAll(
+    ".blocks-row-1 .wp-block-column"
+  );
+  const blocksRowTwo = document.querySelectorAll(
+    ".blocks-row-2 .wp-block-column"
+  );
+  let heightArrOne = [];
+  let heightArrTwo = [];
+  //console.log("i am home");
+  function findHeight(el1, el2) {
+    el1.forEach((block) => {
+      const blockHeight = block.getBoundingClientRect().height;
+      heightArrOne.push(blockHeight);
+    });
+    console.log(heightArrOne);
+    el2.forEach((block) => {
+      const blockHeight = block.getBoundingClientRect().height;
+      heightArrTwo.push(blockHeight);
+    });
+    console.log(heightArrTwo);
+    const maxNum = Math.max(...heightArrOne, ...heightArrTwo);
+    console.log(maxNum);
+    if (window.screen.width < 900) {
+      blocksRowOne.forEach((block) => {
+        block.style.minHeight = `${maxNum}px`;
+      });
+      blocksRowTwo.forEach((block) => {
+        block.style.minHeight = `${maxNum}px`;
+      });
+    }
+  }
+  findHeight(blocksRowOne, blocksRowTwo);
+}
+
+//Brighter IR
+window.addEventListener("message", function (event) {
+  var frames = document.getElementsByTagName("iframe");
+  for (var i = 0; i < frames.length; i++) {
+    if (frames[i].contentWindow === event.source) {
+      jQuery(frames[i]).height(event.data);
+      break;
+    }
+  }
+});

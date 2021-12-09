@@ -172,3 +172,13 @@
         }
     }
 }
+@include below(900px) {
+    .blocks-row-1 .wp-block-column,
+    .blocks-row-2 .wp-block-column {
+        display: grid !important;
+        gap: 1rem;
+    }
+    .blocks-row-2 .wp-block-column:last-of-type {
+        display: none !important;
+    }
+}

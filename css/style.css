@@ -99,6 +99,13 @@ select {
     scroll-behavior: auto !important;
   }
 }
+/*Brighter IR*/
+iframe {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
 /*
 //////////////////////GENERAL TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 There will be other typography styles specific to items elsewhere 
@@ -119,6 +126,11 @@ p {
 .content > p:first-of-type {
   font-weight: bold;
   font-size: 1.125rem;
+}
+@media (max-width: 500px) {
+  .content > p:first-of-type {
+    font-size: 1rem;
+  }
 }
 
 a {
@@ -160,6 +172,9 @@ h6 {
 .content h3 {
   color: #00b3b0;
 }
+.content h3.dark {
+  color: black;
+}
 
 .content p a {
   color: #333333;
@@ -173,6 +188,10 @@ h6 {
 
 .small {
   font-size: 0.875rem;
+}
+
+.dark {
+  color: black;
 }
 
 /*
@@ -451,7 +470,7 @@ body {
   left: 0;
   width: 127px;
   height: 127px;
-  z-index: 2;
+  z-index: -2;
   transition: all 0.3s linear;
 }
 
@@ -612,10 +631,20 @@ a.block-btn {
   visibility: hidden;
   z-index: -100;
 }
+@media (max-width: 500px) {
+  .top-link {
+    display: none;
+  }
+}
 
 .show-link {
   visibility: visible;
   z-index: 100;
+}
+@media (max-width: 500px) {
+  .show-link {
+    display: none;
+  }
 }
 
 @keyframes bounce {
@@ -802,6 +831,17 @@ a.block-btn {
   }
 }
 
+@media (max-width: 900px) {
+  .blocks-row-1 .wp-block-column,
+.blocks-row-2 .wp-block-column {
+    display: grid !important;
+    gap: 1rem;
+  }
+
+  .blocks-row-2 .wp-block-column:last-of-type {
+    display: none !important;
+  }
+}
 /*//////////////BOARD\\\\\\\\\\\\\\\\\\\\*/
 .board-grid {
   display: grid;

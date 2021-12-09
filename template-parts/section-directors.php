@@ -9,8 +9,8 @@
             <div class="board-grid-item">
                 <?php if(has_post_thumbnail()):?>
                 <a href="<?php the_permalink ();?>">
-                    <div class="img-zoom"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
-                    </div>
+                    <img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
+
                 </a>
 
                 <?php endif;?>

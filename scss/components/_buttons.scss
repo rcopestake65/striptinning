@@ -102,13 +102,18 @@ a.block-btn {
     border-radius: 5px;
     color: $clr-white;
     animation: bounce 2s ease-in-out infinite;
-
     visibility: hidden;
     z-index: -100;
+    @include below($br-small) {
+        display: none;
+    }
 }
 .show-link {
     visibility: visible;
     z-index: 100;
+    @include below($br-small) {
+        display: none;
+    }
 }
 @keyframes bounce {
     0% {

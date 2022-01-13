@@ -1,0 +1,90 @@
+@use "../abstracts/variables" as *;
+@use "../components/buttons";
+/*////////////////PAGE - GOVERNANCE\\\\\\\\\\\\\\\\\\\*/
+
+/*Grid*/
+.gov-grid-container h4 {
+    background-color: $clr-main;
+    color: $clr-white;
+    padding: 0.5rem;
+    font-size: $fs-14;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+.gov-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: $fs-12;
+    // gap: 1rem;
+    p {
+        font-size: $fs-12;
+        padding-bottom: 0.5rem;
+    }
+    ul {
+        list-style-type: disc;
+    }
+    li {
+        padding-bottom: 0.5rem;
+    }
+    h5 {
+        display: none;
+    }
+    .col-header {
+        background-color: $clr-main-dark;
+        color: $clr-white;
+        font-size: $fs-14;
+    }
+    .col-main-header {
+        grid-column: 1/-1;
+        padding: 0;
+    }
+    .col {
+        padding: 0.5rem;
+    }
+    .col-a {
+        border-left: 1px solid $clr-main;
+        border-bottom: 1px solid $clr-main;
+    }
+    .col-b {
+        border-left: 1px solid $clr-main;
+        border-right: 1px solid $clr-main;
+        border-bottom: 1px solid $clr-main;
+    }
+    .col-c {
+        border-right: 1px solid $clr-main;
+        border-bottom: 1px solid $clr-main;
+    }
+    .border {
+        border-left: 1px solid $clr-white;
+        border-right: 1px solid $clr-white;
+    }
+}
+@include below($br-medium) {
+    .gov-grid {
+        grid-template-columns: 1fr;
+        p,
+        ul {
+            padding: 0.5rem;
+        }
+        h5 {
+            display: block;
+            background: $clr-main-dark;
+            color: $clr-white;
+            font-size: $fs-14;
+            padding: 0.5rem;
+        }
+        .col-header {
+            display: none;
+        }
+        .col {
+            padding: 0;
+        }
+        .col-a,
+        .col-b,
+        .col-c {
+            border-left: 1px solid $clr-main;
+            border-right: 1px solid $clr-main;
+        }
+    }
+}

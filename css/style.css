@@ -417,6 +417,12 @@ body {
 .menu li:hover:before {
   color: white;
 }
+.mobile-menu .current_page_item,
+.mobile-menu .current-menu-item,
+.menu .current_page_item,
+.menu .current-menu-item {
+  background-color: #00b3b0;
+}
 
 .mobile-menu {
   margin-top: 0.5rem;
@@ -1045,6 +1051,95 @@ a.block-btn {
 }
 .page-ipo-documents table a:hover {
   color: #00b3b0;
+}
+
+/*////////////////PAGE - GOVERNANCE\\\\\\\\\\\\\\\\\\\*/
+/*Grid*/
+.gov-grid-container h4 {
+  background-color: #00b3b0;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.gov-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 0.75rem;
+}
+.gov-grid p {
+  font-size: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+.gov-grid ul {
+  list-style-type: disc;
+}
+.gov-grid li {
+  padding-bottom: 0.5rem;
+}
+.gov-grid h5 {
+  display: none;
+}
+.gov-grid .col-header {
+  background-color: #008f8c;
+  color: white;
+  font-size: 0.875rem;
+}
+.gov-grid .col-main-header {
+  grid-column: 1/-1;
+  padding: 0;
+}
+.gov-grid .col {
+  padding: 0.5rem;
+}
+.gov-grid .col-a {
+  border-left: 1px solid #00b3b0;
+  border-bottom: 1px solid #00b3b0;
+}
+.gov-grid .col-b {
+  border-left: 1px solid #00b3b0;
+  border-right: 1px solid #00b3b0;
+  border-bottom: 1px solid #00b3b0;
+}
+.gov-grid .col-c {
+  border-right: 1px solid #00b3b0;
+  border-bottom: 1px solid #00b3b0;
+}
+.gov-grid .border {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+@media (max-width: 800px) {
+  .gov-grid {
+    grid-template-columns: 1fr;
+  }
+  .gov-grid p,
+.gov-grid ul {
+    padding: 0.5rem;
+  }
+  .gov-grid h5 {
+    display: block;
+    background: #008f8c;
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+  .gov-grid .col-header {
+    display: none;
+  }
+  .gov-grid .col {
+    padding: 0;
+  }
+  .gov-grid .col-a,
+.gov-grid .col-b,
+.gov-grid .col-c {
+    border-left: 1px solid #00b3b0;
+    border-right: 1px solid #00b3b0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

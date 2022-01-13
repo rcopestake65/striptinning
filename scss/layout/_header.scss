@@ -123,6 +123,10 @@
     li:hover:before {
         color: $clr-white;
     }
+    .current_page_item,
+    .current-menu-item {
+        background-color: $clr-main;
+    }
 }
 
 .mobile-menu {

@@ -348,6 +348,9 @@
                         </p>
                     </div>
                 </div><!-- .gov-grid-->
+                <p>
+                    <!-- wp:paragraph -->
+                <p><span class="small">This information was last updated on 16th February 2022</span></p>
 
         </div><!-- .gov-grid-container -->
     </div>

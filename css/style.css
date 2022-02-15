@@ -383,16 +383,16 @@ body {
 .menu li:last-of-type {
   margin-top: 1rem;
 }
-.mobile-menu li:nth-of-type(10),
 .mobile-menu li:nth-of-type(11),
-.menu li:nth-of-type(10),
-.menu li:nth-of-type(11) {
+.mobile-menu li:nth-of-type(12),
+.menu li:nth-of-type(11),
+.menu li:nth-of-type(12) {
   border-bottom: none;
 }
-.mobile-menu li:nth-of-type(10):hover,
 .mobile-menu li:nth-of-type(11):hover,
-.menu li:nth-of-type(10):hover,
-.menu li:nth-of-type(11):hover {
+.mobile-menu li:nth-of-type(12):hover,
+.menu li:nth-of-type(11):hover,
+.menu li:nth-of-type(12):hover {
   border-bottom: none;
 }
 .mobile-menu .fa-chevron-right,
@@ -744,6 +744,14 @@ a.block-btn {
 .blocks-row-1 .wp-block-column:nth-of-type(1) p:first-of-type {
   padding-top: 1rem;
 }
+.blocks-row-1 .wp-block-column:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blocks-row-1 .wp-block-column:nth-of-type(1) p:nth-of-type(2) {
+  align-self: flex-end;
+}
 .blocks-row-1 .wp-block-column:nth-of-type(2) {
   background-color: #00b3b0;
   display: flex;
@@ -1034,22 +1042,22 @@ a.block-btn {
 }
 
 /*//////////////IPO DOCS\\\\\\\\\\\\\\\\\\\\*/
-.page-ipo-documents table th {
+.page-company-reports table th {
   text-align: left;
 }
-.page-ipo-documents table th,
-.page-ipo-documents table td {
+.page-company-reports table th,
+.page-company-reports table td {
   border-bottom: 1px solid black;
   padding: 0.5rem 0;
 }
-.page-ipo-documents table td:first-of-type {
+.page-company-reports table td:first-of-type {
   width: 90%;
 }
-.page-ipo-documents table a {
+.page-company-reports table a {
   border-bottom: none;
   color: black;
 }
-.page-ipo-documents table a:hover {
+.page-company-reports table a:hover {
   color: #00b3b0;
 }
 
@@ -1140,6 +1148,49 @@ a.block-btn {
     border-left: 1px solid #00b3b0;
     border-right: 1px solid #00b3b0;
   }
+}
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+.page-securities-information .content ul {
+  list-style-type: square;
+}
+.page-securities-information .content ul li {
+  padding-left: 1rem;
+}
+.page-securities-information .content ul li::marker {
+  color: #00b3b0;
+  font-size: 1.5rem;
+}
+
+/*///////////////////Tables\\\\\\\\\\\\\\\\\\\\\*/
+.shareholder-content {
+  margin-top: 1rem;
+}
+.shareholder-content h2 {
+  color: #00b3b0;
+}
+.shareholder-content h4 {
+  font-weight: bold;
+}
+.shareholder-content p:first-of-type {
+  padding-top: 1rem;
+}
+.shareholder-content table {
+  margin: 1rem 0;
+  border: 2px solid #008f8c;
+  padding: 1px;
+  width: 100%;
+}
+.shareholder-content th {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background-color: #333333;
+  color: white;
+}
+.shareholder-content td {
+  padding: 0.5rem 1rem;
+}
+.shareholder-content tr:nth-child(even) {
+  background: #eee;
 }
 
 /*# sourceMappingURL=style.css.map */

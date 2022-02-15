@@ -15,9 +15,10 @@
 @use "pages/calendar";
 @use "pages/ircontacts";
 @use "pages/investment";
-@use "pages/ipo";
+@use "pages/reports";
 @use "pages/governance";
-//@use "pages/contact";
+@use "pages/securities";
 //@use "pages/page404";
 
 @use "components/buttons";
+@use "components/tables";

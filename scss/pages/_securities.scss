@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../components/buttons";
+/*////////////////PAGE - IR CONTACTS\\\\\\\\\\\\\\\\\\\*/
+.page-securities-information {
+    .content {
+        ul {
+            list-style-type: square;
+            li {
+                // border-left: 1rem solid $clr-main;
+                // margin-bottom: 1rem;
+                padding-left: 1rem;
+                &::marker {
+                    color: $clr-main;
+                    font-size: $fs-24;
+                }
+            }
+        }
+    }
+}

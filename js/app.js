@@ -23,6 +23,7 @@ if (!frontPage) {
   const gohome = document.querySelector(".go-home");
   logo.addEventListener("mouseenter", function () {
     gohome.classList.add("go-home-hover");
+    console.log("hovered");
   });
   logo.addEventListener("mouseleave", function () {
     gohome.classList.remove("go-home-hover");

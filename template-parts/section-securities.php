@@ -32,8 +32,8 @@
                 </tr>
                 <tr>
                     <td>Richard Barton</td>
-                    <td>8,418,920</td>
-                    <td>55.6%</td>
+                    <td>7,554,055</td>
+                    <td>49.9%</td>
                 </tr>
                 <tr>
                     <td>Shard Capital Partners LLP</td>
@@ -44,6 +44,11 @@
                     <td>River and Mercantile Asset Management Limited</td>
                     <td>964,733</td>
                     <td>6.4%</td>
+                </tr>
+                <tr>
+                    <td>Anne Barton</td>
+                    <td>864,965</td>
+                    <td>5.7%</td>
                 </tr>
                 <tr>
                     <td>Crux Asset Management</td>
@@ -81,8 +86,8 @@
                 </tr>
                 <tr>
                     <td>Richard Barton</td>
-                    <td>8,418,920</td>
-                    <td>55.6%</td>
+                    <td>8,418,920<sup>1</sup></td>
+                    <td>55.6%<sup>1</sup></td>
                 </tr>
                 <tr>
                     <td>Adam Le Van</td>
@@ -100,6 +105,7 @@
                     <td>0.1%</td>
                 </tr>
             </table>
+            <p> <sup>1</sup>Includes 864,865 shares held by his wife, Anne Barton</p>
         </div>
 
 

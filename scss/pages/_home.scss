@@ -155,7 +155,7 @@
         background-color: $clr-dark;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        // justify-content: space-between;
 
         h3,
         p {
@@ -181,11 +181,11 @@
     }
 }
 @include below(900px) {
-    .blocks-row-1 .wp-block-column,
-    .blocks-row-2 .wp-block-column {
-        display: grid !important;
-        gap: 1rem;
-    }
+    // .blocks-row-1 .wp-block-column,
+    // .blocks-row-2 .wp-block-column {
+    //     display: grid !important;
+    //     gap: 1rem;
+    // }
     .blocks-row-2 .wp-block-column:last-of-type {
         display: none !important;
     }

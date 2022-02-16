@@ -14,7 +14,8 @@
             <div class="hero">
                 <h2 id="banner">Maintaining and expanding our automotive industry leadership in high performance,
                     flexible connectors</h2>
-                <div class="hero-btn"> <button><a href="#">Find out more <i class="fas fa-arrow-right"></i></a></button>
+                <div class="hero-btn"> <button><a href="/investment/investment-case/">Find out more <i
+                                class="fas fa-arrow-right"></i></a></button>
                 </div>
 
             </div>

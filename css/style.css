@@ -499,7 +499,7 @@ body {
 */
 .footer-container {
   background-color: #f3f5f7;
-  padding-bottom: 10rem;
+  padding-bottom: 1rem;
   margin-top: 5rem;
 }
 
@@ -822,7 +822,6 @@ a.block-btn {
   background-color: #333333;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .blocks-row-2 .wp-block-column:nth-of-type(2) h3,
 .blocks-row-2 .wp-block-column:nth-of-type(2) p {
@@ -846,12 +845,6 @@ a.block-btn {
 }
 
 @media (max-width: 900px) {
-  .blocks-row-1 .wp-block-column,
-.blocks-row-2 .wp-block-column {
-    display: grid !important;
-    gap: 1rem;
-  }
-
   .blocks-row-2 .wp-block-column:last-of-type {
     display: none !important;
   }
